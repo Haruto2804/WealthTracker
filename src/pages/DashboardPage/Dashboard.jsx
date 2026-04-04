@@ -1,7 +1,8 @@
 import AppButton from "@/components/AppButton";
 import StatCard from "./StatCard";
 import IncomeExpenseChart from "./IncomeExpenseChart";
-import { CardHeader, CardTitle,Card, CardContent } from "@/components/ui/card";
+import { CardHeader, CardTitle, Card, CardContent, CardFooter } from "@/components/ui/card";
+import AssetAllocation from "./AssetAllocation";
 
 
 const Dashboard = () => {
@@ -41,14 +42,33 @@ const Dashboard = () => {
           <CardHeader>
             <CardTitle>
               <p className="font-semibold ">Thu nhập và chi tiêu</p>
-              <p className="text-[14px]">6 tháng gần nhất</p>
+              <p className="text-[14px] text-green-500">6 tháng gần nhất</p>
             </CardTitle>
           </CardHeader>
           <CardContent >
             <IncomeExpenseChart />
           </CardContent>
         </Card>
-    
+        <Card className="md:w-1/2 w-full">
+          <CardHeader>
+            <CardTitle className="flex justify-between">
+              <div>
+                <p className="font-semibold">Phân bổ tài sản</p>
+                <p className="text-[14px] text-green-500">Tổng: 15000000 VNĐ</p>
+              </div>
+            <AppButton 
+            variant = "outline"
+            iconType="add"
+            >
+              Thêm tài sản
+            </AppButton>
+            </CardTitle>
+          </CardHeader>
+          <CardContent >
+            <AssetAllocation />
+          </CardContent>
+        </Card>
+
       </div>
     </div>
   )

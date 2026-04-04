@@ -27,7 +27,6 @@ const IncomeExpenseChart = () => {
     <ChartContainer
       config={chartConfig} className="min-h-50 w-full">
       <BarChart accessibilityLayer data={chartData}>
-
         <ChartTooltip
           content={<ChartTooltipContent />} />
         <ChartLegend content={<ChartLegendContent />} />
