@@ -2,14 +2,6 @@
 import { Pie, PieChart } from "recharts"
 import { ChartLegendContent, ChartLegend, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 
-const chartData = [
-  { asset: "gold", amount: 150000000, fill: "var(--color-gold)" },
-  { asset: "stocks", amount: 100000000, fill: "var(--color-stocks)" },
-  { asset: "cash", amount: 50000000, fill: "var(--color-cash)" },
-  { asset: "realestate", amount: 150000000, fill: "var(--color-realestate)" },
-  { asset: "savings", amount: 30000000, fill: "var(--color-savings)" },
-  { asset: "crypto", amount: 20000000, fill: "var(--color-crypto)" },
-]
 const chartConfig = {
   gold: {
     label: "Vàng",
@@ -37,7 +29,7 @@ const chartConfig = {
   },
 }
 // sử dụng Pie Chart của Shadcn UI
-const AssetAllocation = () => {
+const AssetAllocation = ({chartData= []}) => {
   return (
     <ChartContainer
       config={chartConfig}

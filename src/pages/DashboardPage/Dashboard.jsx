@@ -1,11 +1,41 @@
 import AppButton from "@/components/AppButton";
 import StatCard from "./StatCard";
-import IncomeExpenseChart from "./IncomeExpenseChart";
+import IncomeExpenseChart from "./BarChartGroup";
 import { CardHeader, CardTitle, Card, CardContent, CardFooter } from "@/components/ui/card";
 import AssetAllocation from "./AssetAllocation";
+import BarChartGroup from "./BarChartGroup";
 
+const chartDataAssets = [
+  { asset: "gold", amount: 150000000, fill: "var(--color-gold)" },
+  { asset: "stocks", amount: 100000000, fill: "var(--color-stocks)" },
+  { asset: "cash", amount: 50000000, fill: "var(--color-cash)" },
+  { asset: "realestate", amount: 150000000, fill: "var(--color-realestate)" },
+  { asset: "savings", amount: 30000000, fill: "var(--color-savings)" },
+  { asset: "crypto", amount: 20000000, fill: "var(--color-crypto)" },
+]
 
+const chartDataIncome = [
+  { month: 1, income: 25000000, expense: 18000000 },
+  { month: 2, income: 28000000, expense: 20000000 },
+  { month: 3, income: 30500000, expense: 22000000 },
+  { month: 4, income: 27000000, expense: 21000000 },
+  { month: 5, income: 29000000, expense: 19500000 },
+  { month: 6, income: 32000000, expense: 24000000 },
+]
+const chartConfigIncome = {
+  income: {
+    label: "Thu nhập ",
+    color: "#22c55e", // Green-500 (Tailwind)
+  },
+  expense: {
+    label: "Chi tiêu ",
+    color: "#ef4444", // Red-500 (Tailwind)
+  },
+}
 const Dashboard = () => {
+  const totalAmountAsset = chartDataAssets.reduce((acc, curr) => {
+    return acc + curr.amount;
+  }, 0)
   return (
     <div className="flex flex-col gap-10">
       <header className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
@@ -46,7 +76,11 @@ const Dashboard = () => {
             </CardTitle>
           </CardHeader>
           <CardContent >
-            <IncomeExpenseChart />
+            <BarChartGroup
+              chartData={chartDataIncome}
+              chartConfig={chartConfigIncome}
+              dataKeys={["income", "expense"]}
+            />
           </CardContent>
         </Card>
         <Card className="md:w-1/2 w-full">
@@ -54,18 +88,20 @@ const Dashboard = () => {
             <CardTitle className="flex justify-between">
               <div>
                 <p className="font-semibold">Phân bổ tài sản</p>
-                <p className="text-[14px] text-green-500">Tổng: 15000000 VNĐ</p>
+                <p className="text-[14px] text-green-500">Tổng: {totalAmountAsset.toLocaleString('vi-VN')} VNĐ</p>
               </div>
-            <AppButton 
-            variant = "outline"
-            iconType="add"
-            >
-              Thêm tài sản
-            </AppButton>
+              <AppButton
+                variant="outline"
+                iconType="add"
+              >
+                Thêm tài sản
+              </AppButton>
             </CardTitle>
           </CardHeader>
           <CardContent >
-            <AssetAllocation />
+            <AssetAllocation
+              chartData={chartDataAssets}
+            />
           </CardContent>
         </Card>
 
