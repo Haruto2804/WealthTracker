@@ -1,6 +1,7 @@
 
 import { Pie, PieChart } from "recharts"
 import { ChartLegendContent, ChartLegend, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
+import { formatVND } from "@/utils"
 
 const chartConfig = {
   gold: {
@@ -67,7 +68,7 @@ const AssetAllocation = ({chartData= []}) => {
                   </div>
                   <span className="font-mono font-bold text-foreground">
                     {/* Format VNĐ dùng JS thuần */}
-                    {Number(value).toLocaleString("vi-VN")} ₫
+                    {formatVND(value)}
                   </span>
                 </div>
               )}

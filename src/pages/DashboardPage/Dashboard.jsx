@@ -4,6 +4,10 @@ import IncomeExpenseChart from "./BarChartGroup";
 import { CardHeader, CardTitle, Card, CardContent, CardFooter } from "@/components/ui/card";
 import AssetAllocation from "./AssetAllocation";
 import BarChartGroup from "./BarChartGroup";
+import ExpenseAnalysis from "./ExpenseAnalysis";
+import RecentTransaction from "./RecentTransaction";
+import AddTransactionModal from "@/components/AddTransactionModal";
+
 
 const chartDataAssets = [
   { asset: "gold", amount: 150000000, fill: "var(--color-gold)" },
@@ -51,12 +55,16 @@ const Dashboard = () => {
 
         {/* Phần Nút bấm: Xếp hàng ngang, co giãn linh hoạt */}
         <div className="flex flex-row items-center gap-3 sm:gap-4">
-          <AppButton
-            iconType="add"
-            variant="default"
-          >
-            Thêm giao dịch
-          </AppButton>
+          <AddTransactionModal
+            trigger={
+              <AppButton
+                iconType="add"
+                variant="default"
+              >
+                Thêm giao dịch
+              </AppButton>
+            }
+          />
 
           <AppButton
             iconType="export"
@@ -102,6 +110,34 @@ const Dashboard = () => {
             <AssetAllocation
               chartData={chartDataAssets}
             />
+          </CardContent>
+        </Card>
+
+      </div>
+      <div className="w-full">
+        <Card className="w-full">
+          <CardHeader>
+            <CardTitle>
+              <p className="font-semibold ">Phân tích chi tiêu</p>
+              <p className="text-[14px] text-green-500">6 tháng gần nhất</p>
+            </CardTitle>
+          </CardHeader>
+          <CardContent >
+            <ExpenseAnalysis />
+          </CardContent>
+        </Card>
+
+      </div>
+      <div className="w-full">
+        <Card
+          className="w-full">
+          <CardHeader>
+            <CardTitle>
+              <p className="font-semibold ">Giao dịch gần đây</p>
+            </CardTitle>
+          </CardHeader>
+          <CardContent >
+            <RecentTransaction />
           </CardContent>
         </Card>
 
