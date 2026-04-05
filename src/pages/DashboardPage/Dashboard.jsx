@@ -1,7 +1,6 @@
 import AppButton from "@/components/AppButton";
 import StatCard from "./StatCard";
-import IncomeExpenseChart from "./BarChartGroup";
-import { CardHeader, CardTitle, Card, CardContent, CardFooter } from "@/components/ui/card";
+import { CardHeader, CardTitle, Card, CardContent } from "@/components/ui/card";
 import AssetAllocation from "./AssetAllocation";
 import BarChartGroup from "./BarChartGroup";
 import ExpenseAnalysis from "./ExpenseAnalysis";
@@ -55,17 +54,7 @@ const Dashboard = () => {
 
         {/* Phần Nút bấm: Xếp hàng ngang, co giãn linh hoạt */}
         <div className="flex flex-row items-center gap-3 sm:gap-4">
-          <AddTransactionModal
-            trigger={
-              <AppButton
-                iconType="add"
-                variant="default"
-              >
-                Thêm giao dịch
-              </AppButton>
-            }
-          />
-
+    
           <AppButton
             iconType="export"
             variant="outline"

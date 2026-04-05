@@ -1,4 +1,6 @@
 
+
+"use client"
 import { Pie, PieChart } from "recharts"
 import { ChartLegendContent, ChartLegend, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 import { formatVND } from "@/utils"
