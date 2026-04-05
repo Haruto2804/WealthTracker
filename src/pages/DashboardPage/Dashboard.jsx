@@ -5,7 +5,6 @@ import AssetAllocation from "./AssetAllocation";
 import BarChartGroup from "./BarChartGroup";
 import ExpenseAnalysis from "./ExpenseAnalysis";
 import RecentTransaction from "./RecentTransaction";
-import AddTransactionModal from "@/components/AddTransactionModal";
 
 
 const chartDataAssets = [

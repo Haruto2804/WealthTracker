@@ -4,6 +4,8 @@ import Layout from './layouts/Layout'
 import './App.css'
 import Dashboard from './pages/DashboardPage/Dashboard'
 import Transaction from './pages/TransactionPage/Transaction'
+import Asset from './pages/AssetPage/Asset'
+
 
 function App() {
 
@@ -13,6 +15,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route path="/dashboard" element = {<Dashboard />}/>
         <Route path = "/transaction" element = {<Transaction />}/>
+        <Route path='/asset' element={<Asset />}/>
       </Route>
     </Routes>
   )
