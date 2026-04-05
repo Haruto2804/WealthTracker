@@ -18,7 +18,7 @@ const Header = () => {
           <a href="/dashboard" className="text-sm font-semibold text-black border-b-2 border-black pb-5 mt-5">Dashboard</a>
           <a href="/transaction" className="text-sm font-medium text-gray-500 hover:text-black transition-colors">Giao dịch</a>
           <a href="/asset" className="text-sm font-medium text-gray-500 hover:text-black transition-colors">Tài sản</a>
-          <a href="#" className="text-sm font-medium text-gray-500 hover:text-black transition-colors">Báo cáo</a>
+          <a href="/report" className="text-sm font-medium text-gray-500 hover:text-black transition-colors">Báo cáo</a>
         </nav>
       </div>
 
