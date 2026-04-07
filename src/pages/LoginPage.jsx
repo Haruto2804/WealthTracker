@@ -18,7 +18,7 @@ const Login = () => {
       <div className="flex flex-col md:flex-row max-w-5xl w-full gap-10 items-center">
 
         {/* BÊN TRÁI: GIỚI THIỆU */}
-        <div className="w-full md:w-1/2 flex flex-col gap-6">
+        <div className="hidden md:flex w-1/2 flex-col gap-6 ">
           <div className="flex gap-3 items-center">
             <div className="bg-black rounded-lg flex items-center justify-center p-2">
               <PiWalletBold className="text-white size-8" />
@@ -137,7 +137,7 @@ const Login = () => {
             {/* Footer */}
             <p className="text-center text-sm text-gray-500 mt-4">
               Chưa có tài khoản?{" "}
-              <a href="#" className="font-bold text-black hover:underline">Đăng ký ngay</a>
+              <a href="/register" className="font-bold text-black hover:underline">Đăng ký ngay</a>
             </p>
 
           </CardContent>
