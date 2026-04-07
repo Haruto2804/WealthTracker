@@ -1,5 +1,6 @@
 import { PiWalletBold } from "react-icons/pi";
 import { IoSearchOutline, IoNotificationsOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -43,9 +44,12 @@ const Header = () => {
         </div>
 
         {/* User Avatar */}
-        <div className="flex items-center justify-center w-10 h-10 bg-black text-white rounded-full font-bold text-sm cursor-pointer border-2 border-transparent hover:border-gray-200">
+        <Link to='/login'>
+          <div className="flex items-center justify-center w-10 h-10 bg-black text-white rounded-full font-bold text-sm cursor-pointer border-2 border-transparent hover:border-gray-200">
           NV
         </div>
+        </Link>
+      
       </div>
     </header>
   );
