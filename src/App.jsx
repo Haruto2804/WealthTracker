@@ -9,10 +9,10 @@ import Report from './pages/ReportPage/Report'
 import Login from './pages/LoginPage'
 import NotFoundPage from './pages/NotFoundPage'
 import Register from './pages/RegisterPage'
+import Profile from './pages/ProfilePage/Profile'
 
 
 function App() {
-
   return (
     <Routes>
       {/* Layout bọc ngoài cùng làm Route cha */}
@@ -23,6 +23,7 @@ function App() {
         <Route path='/report' element={<Report />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/profile' element={<Profile />} />
         <Route path='*' element={<NotFoundPage />} />
       </Route>
     </Routes>
